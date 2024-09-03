@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유튜브 영상보기</title>
+    <style>
+        .modal{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1;
+            overflow: auto; 
+            /* 픽스드 된 상태에서 스크롤 생기게 하려면 오버플로우 오토 */
+        }
+        .modal-content{
+            width: 80%;
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 2%;
+            border: 1px solid #888;
+            height: 50.1vw;
+
+        }
+        .modal-content iframe{
+            width: 100%;
+            height: 89%;
+        }
+
+         /* 닫기 버튼 스타일 */
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .close:hover{
+        cursor: pointer;
+      }
+    </style>
+</head>
+<body>
+    <a href="#" id="youTube-link">유튜브 영상보기</a>
+    <!-- 모달창 -->
+    <div class="modal" id="youTube-modal">
+        <div class="modal-content">
+            <!-- 닫기 -->
+            <span class="close">&times;</span>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/bNkjgqRG5fo?si=jteavU0533IaetzO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+    <script>
+        const modal = document.querySelector("#youTube-modal")
+        const youtube = document.querySelector("#youTube-link")
+        const close = document.querySelector(".close")
+        youtube.addEventListener("click",function(){
+            modal.style.display = "block"
+            video.play()
+        })
+        close.addEventListener("click",function(){
+            modal.style.display = "none"
+        })
+    </script>
+</body>
+</html>
